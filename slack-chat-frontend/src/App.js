@@ -128,7 +128,7 @@ class App extends Component {
         <div className="App">
           {/* <NavBar users={this.state.users} /> */}
           <header>
-        <h3>Art Appreciators Incorporated</h3>
+        <h3>slackChat</h3>
        <ul>
          <li>
            <NavLink to='/' exact>Home</NavLink>
