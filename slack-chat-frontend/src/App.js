@@ -10,7 +10,7 @@ import Login from './components/Login'
 import SignUp from './components/SignUp'
 import Home from './components/Home'
 // import {Redirect} from "react-router-dom";
-import {Route, Switch, NavLink, Router, withRouter} from 'react-router-dom'
+import {Route, Switch, NavLink, withRouter} from 'react-router-dom'
 
 class App extends Component {
   
@@ -51,7 +51,7 @@ class App extends Component {
       console.log(this.props)
       localStorage.token = res.token
       this.setState({user:{id:res.user.id, username:res.user.username, token:res.token}, }, () => {
-      // this.props.history.push('/channels')
+      this.props.history.push('/channels')
       // window.location.replace('http://localhost:3000/channels')
       console.log(this.state.user)
     })
@@ -125,7 +125,6 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
         <div className="App">
           {/* <NavBar users={this.state.users} /> */}
           <header>
@@ -149,14 +148,13 @@ class App extends Component {
           
       <Switch>
 
-        <Route path='/' component={Home}/>
+        <Route exact path='/' component={Home}/>
         <Route path='/login' render={this.renderLoginPage}/>
         <Route path='/signup' render={this.renderSignUpPage}/>
 
       </Switch>
 
     </div>
-    // </Router> 
     
     //       <NavBar users={this.state.users} />
     //       <Route path='/login'> 
