@@ -29,7 +29,7 @@ render(){
       </form> */}
       <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <form onSubmit={(e) => this.props.handleLoginOrSignup(e, this.state)} class="modal-content">
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -39,21 +39,22 @@ render(){
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="defaultForm-email" class="form-control validate"/>
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+          {/* <input type="text" id="defaultForm-username" class="form-control validate"/> */}
+          <input type="text" name="username" id="defaultForm-username" class="form-control validate" value={this.state.username} onChange={this.handleChange}/>
+          <label data-error="wrong" data-success="right" for="defaultForm-username">Username</label>
         </div>
 
         <div class="md-form mb-4">
           <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="defaultForm-pass" class="form-control validate"/>
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+          <input type="password" id="defaultForm-pass" class="form-control validate" name="password" value={this.state.password} onChange={this.handleChange}/>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
         </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default">Login</button>
+        <button type="submit" class="btn btn-default">Login</button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
