@@ -15,6 +15,7 @@ handleChange = (e) => {
 }
 
 render(){
+    console.log('test')
   return (
     <div className="Login">
      <form onSubmit={(e) => this.props.handleLoginOrSignup(e, this.state)}>
