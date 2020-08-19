@@ -119,7 +119,8 @@ class App extends Component {
       .then((res) => res.json())
       .then((json) => {
         if (!json.error) {
-          this.handleAuthResponse(json);
+          this.renderLoginPage();
+          // this.handleAuthResponse(json);
         } else {
           alert(json.error);
         }
@@ -136,7 +137,13 @@ class App extends Component {
     });
   };
 
-  renderLoginPage = () => <Login handleLoginOrSignup={this.handleLogin} />;
+  renderLoginPage = () => (
+    <Login
+      handleLoginOrSignup={this.handleLogin}
+      renderSignUpPage={this.renderSignUpPage}
+      test={this.test}
+    />
+  );
   renderSignUpPage = () => <SignUp handleLoginOrSignup={this.handleSignup} />;
   renderHomePage = () => (
     <Home
@@ -146,6 +153,7 @@ class App extends Component {
       posts={this.state.posts}
     />
   );
+  test = () => <SignUp handleLoginOrSignup={this.handleSignup} />;
 
   render() {
     console.log(this.state.user.id);
@@ -165,26 +173,6 @@ class App extends Component {
             <Redirect to={"/login"} />
           </div>
         )}
-
-        {/* <header>
-          <h3>slackChat</h3>
-          <ul>
-            <li>
-              <NavLink to="/" exact>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/signup">Sign up</NavLink>
-            </li> */}
-        {/* <li>
-           <NavLink to='/channels'>Channels</NavLink>
-        //  </li> */}
-        {/* //   </ul> */}
-        {/* // </header> */}
 
         <Switch>
           <Route exact path="/login" render={this.renderLoginPage} />
