@@ -2,44 +2,27 @@ import React, { Component } from "react";
 import "../App.css";
 
 class Navbar extends Component {
-  username = () => {
-    // console.log(this.props.users[0]);
-    return this.props.users.map(
-      (item) =>
-        // console.log(item.name);
-        item.username
+  renderUser = () => {
+    let currentUser = this.props.users.filter(
+      (item) => item.id === this.props.user.id
     );
-  };
-
-  url = () => {
-    // console.log(this.props.users[0]);
-    return this.props.users.map(
-      (item) =>
-        // console.log(item.name);
-        item.img_url
-    );
-  };
-  render() {
+    console.log(currentUser.length > 0 && currentUser[0].id);
     return (
-      <div
-        className={"NavBar"}
-        style={{
-          borderBottom: "2px solid black",
-          paddingBottom: 8,
-          marginBottom: 10,
-        }}
-      >
+      <div>
         <nav class="navbar">
           <a class="navbar-brand" href="#">
             <img
-              src={this.url()[0]}
+              // src={this.url()[0]}
+              src={currentUser.length > 0 && currentUser[0].img_url}
               width="39"
               height="39"
               class="d-inline-block align-top"
               alt=""
               loading="lazy"
             />
-            {this.username()[0]}
+            {/* {this.currentUser.length > 0 && this.currentUser()[0].username} */}
+            {/* {this.username()[0]} */}
+            {currentUser.length > 0 && currentUser[0].username}
           </a>
           <form class="form-inline">
             <input
@@ -52,16 +35,27 @@ class Navbar extends Component {
               Search
             </button>
           </form>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="click">
-            Logout
-          </button>
+          <div onClick={() => this.props.handleLogout()}>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="click">
+              Logout
+            </button>
+          </div>
         </nav>
-        {/* <a className="item">
-          <h2 className="ui header">
-            <i className="paint brush icon" />
-            <div className="content">{`${this.props.message}`}</div>
-          </h2>
-        </a> */}
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div
+        className={"NavBar"}
+        style={{
+          borderBottom: "2px solid black",
+          paddingBottom: 8,
+          marginBottom: 10,
+        }}
+      >
+        {this.renderUser()}
       </div>
     );
   }
