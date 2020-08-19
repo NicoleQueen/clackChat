@@ -60,12 +60,12 @@ class SignUp extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <button type="button" class="submit">
+          <button type="button" class="submit" id="b3">
             Sign Up
           </button>
         </form>
         <a href="http://localhost:3002/login">
-          <button type="button" class="fb-btn">
+          <button type="button" class="fb-btn" id="b4">
             Join with <span>Slack Chat</span>
           </button>
         </a>

@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 
 const SlackPage = ({ match, channels, posts }) => (
   <div className="page">
-    <Grid item xs={3}>
-      <Paper className={useStyles().paper}>
+    <Grid item xs={3} className="grid1">
+      <Paper className={useStyles().paper} id="paper1">
         <ChannelsList channels={channels} />
         <Route
           exact
@@ -29,8 +29,8 @@ const SlackPage = ({ match, channels, posts }) => (
         />
       </Paper>
     </Grid>
-    <Grid item xs={9}>
-      <Paper className={useStyles().paper}>
+    <Grid item xs={9} className="grid1">
+      <Paper className={useStyles().paper} id="paper2">
         <Route
           path={`${match.url}/:channelId`}
           render={(routerProps) => (
@@ -40,7 +40,9 @@ const SlackPage = ({ match, channels, posts }) => (
                 channels={channels}
                 posts={posts}
               />
-              <PostForm {...routerProps} channels={channels} />
+              <footer id="post_form">
+                <PostForm {...routerProps} channels={channels} />
+              </footer>
             </div>
           )}
         />

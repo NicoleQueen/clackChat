@@ -17,7 +17,10 @@ class Post extends Component {
             loading="lazy"
           />
           {currentPost.length > 0 && currentPost[0].user.username}
-          {currentPost.length > 0 && currentPost[0].user.timestamp}
+
+          <div id="timestamp">
+            {currentPost.length > 0 && currentPost[0].timestamp}
+          </div>
         </a>
         <p>{currentPost.length > 0 && currentPost[0].content}</p>
       </div>

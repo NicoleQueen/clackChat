@@ -8,7 +8,6 @@ class Home extends Component {
     return (
       <Router>
         <div className="Home">
-          {/* <NavBar users={this.props.users} user={this.props.user} /> */}
           <Route
             path="/channels"
             render={(routerProps) => (

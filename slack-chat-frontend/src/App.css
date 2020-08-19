@@ -85,6 +85,39 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: stretch;
-  flex-wrap: wrap;
+}
+
+#paper2 {
   height: 100vh;
+}
+
+#paper1 {
+  height: 100vh;
+}
+
+#post_form {
+  /* display: flex;
+  align-self: flex-end;
+  margin-bottom: 9px; */
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+}
+
+#form {
+  display: flex;
+  /* justify-content: space-around;
+  align-self: flex-end; */
+}
+
+.nav-link {
+  color: #000;
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#timestamp {
+  color: rgb(49, 28, 28);
+  font-family: "Great Vibes", cursive;
+  margin-left: 36px;
 }
