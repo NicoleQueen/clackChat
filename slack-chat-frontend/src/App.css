@@ -79,3 +79,12 @@
 .about {
   margin-right: 12px;
 }
+
+.page {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  height: 100vh;
+}
