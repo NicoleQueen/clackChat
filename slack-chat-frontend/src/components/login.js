@@ -1,4 +1,6 @@
 import React from "react";
+import "../login.scss";
+import { NavLink } from "react-router-dom";
 
 class Login extends React.Component {
   state = {
@@ -8,77 +10,86 @@ class Login extends React.Component {
 
   handleChange = (e) => {
     let { name, value } = e.target;
+    console.log({ name, value });
     this.setState({
       [name]: value,
     });
   };
 
   render() {
-    console.log("test");
     return (
       <div className="Login">
-        <form onSubmit={(e) => this.props.handleLoginOrSignup(e, this.state)}>
-          <label>UserName</label>
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-          />
-          <br />
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <br />
-          <input type="submit" value="Submit" />
-        </form>
-        {/* <form onSubmit={(e) => this.props.handleLoginOrSignup(e, this.state)}>
-         <label>UserName</label>
-         <input type="text" name="username" value={this.state.username} onChange={this.handleChange}/>
-        <br/>
-         <label>Password</label>
-         <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
-         <br/>
-         <input type="submit" value="Submit" />
-      </form> */}
-        {/* <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <form onSubmit={(e) => this.props.handleLoginOrSignup(e, this.state)} class="modal-content"> */}
-        {/* <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> */}
-        {/* <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i> */}
-        {/* <input type="text" id="defaultForm-username" class="form-control validate"/> */}
-        {/* <input type="text" name="username" id="defaultForm-username" class="form-control validate" value={this.state.username} onChange={this.handleChange}/>
-          <label data-error="wrong" data-success="right" for="defaultForm-username">Username</label>
-        </div> */}
-        {/* 
-        <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="defaultForm-pass" class="form-control validate" name="password" value={this.state.password} onChange={this.handleChange}/>
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
-        </div> */}
+        <p class="tip">
+          A proprietary communication platform developed by Purple Team:)
+        </p>
+        <div class="cont">
+          <div class="form sign-in">
+            <h2>Welcome to Slack Chat!</h2>
+            <form
+              onSubmit={(e) => this.props.handleLoginOrSignup(e, this.state)}
+            >
+              <label>
+                <span>Username</span>
+                <input
+                  type="text"
+                  name="username"
+                  value={this.state.username}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <label>
+                <span>Password</span>
+                <input
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <p class="forgot-pass">Forgot password?</p>
+              <button type="submit" class="submit">
+                Sign In
+              </button>
+            </form>
+            <a href="https://facebook.com/" target="_blank">
+              <button type="button" class="fb-btn">
+                Connect with <span>facebook</span>
+              </button>
+            </a>
+          </div>
+          <NavLink to="/signup">
+            <div class="sub-cont">
+              <div class="img">
+                <div class="img__text m--up">
+                  <h2>New here?</h2>
+                  <p>Creat a new account and discover great people!</p>
+                </div>
+                {/* <div class="img__text m--in">
+                <h2>One of us?</h2>
+                <p>
+                  If you already has an account, just sign in. We've missed you!
+                </p>
+              </div> */}
 
-        {/* </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button type="submit" class="btn btn-default">Login</button>
-      </div>
-    </form> */}
-        {/* </div>
-</div> */}
+                <div>
+                  {/* {onClick ? console.log("signup1") : console.log("signup2")} */}
+                  <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    {/* <span class="m--in">Sign In</span> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </NavLink>
+        </div>
 
-        {/* <div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Login</a>
-</div> */}
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          class="icon-link icon-link--twitter"
+        >
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png" />
+        </a>
       </div>
     );
   }
