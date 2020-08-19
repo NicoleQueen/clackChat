@@ -5,7 +5,7 @@ class ChannelsList extends Component {
   renderChannels = () => {
     return this.props.channels.map((channel) => (
       <Link key={channel.id} to={`/channels/${channel.id}`}>
-        <li>{channel.name}</li>
+        <ul>{channel.name}</ul>
       </Link>
     ));
   };

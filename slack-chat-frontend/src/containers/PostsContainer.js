@@ -9,9 +9,9 @@ class PostsContainer extends Component {
 
     return currentChannel[0].posts.map((post) => {
       return (
-        <li>
+        <ul>
           <Post post={post} posts={this.props.posts} />
-        </li>
+        </ul>
       );
     });
   };

@@ -30,7 +30,7 @@ class App extends Component {
     this.fetchPosts();
 
     if (localStorage.token) {
-      fetch("http://localhost:3000/persist", {
+      fetch("http://localhost:4000/persist", {
         headers: {
           Authorization: `Bearer ${localStorage.token}`,
         },
@@ -40,7 +40,7 @@ class App extends Component {
           console.log(json);
           this.handleAuthResponse(json);
         });
-      // .then(json => window.location.replace('http://localhost:3000/channels'))
+      // .then(json => window.location.replace('http://localhost:4000/channels'))
     }
   }
 
@@ -58,7 +58,7 @@ class App extends Component {
         },
         () => {
           this.props.history.push("/channels");
-          // window.location.replace('http://localhost:3000/channels')
+          // window.location.replace('http://localhost:4000/channels')
           console.log(this.state.user);
         }
       );
@@ -68,19 +68,19 @@ class App extends Component {
   };
 
   fetchChannels = () => {
-    fetch(`http://localhost:3000/channels`)
+    fetch(`http://localhost:4000/channels`)
       .then((res) => res.json())
       .then((data) => this.setState({ channels: data }));
   };
 
   fetchUsers = () => {
-    fetch(`http://localhost:3000/users`)
+    fetch(`http://localhost:4000/users`)
       .then((res) => res.json())
       .then((data) => this.setState({ users: data }));
   };
 
   fetchPosts = () => {
-    fetch(`http://localhost:3000/posts`)
+    fetch(`http://localhost:4000/posts`)
       .then((res) => res.json())
       .then((data) => this.setState({ posts: data }));
   };
@@ -88,7 +88,7 @@ class App extends Component {
   handleLogin = (e, userInfo) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/login", {
+    fetch("http://localhost:4000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -109,7 +109,7 @@ class App extends Component {
 
   handleSignup = (e, userInfo) => {
     e.preventDefault();
-    fetch("http://localhost:3000/users", {
+    fetch("http://localhost:4000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
