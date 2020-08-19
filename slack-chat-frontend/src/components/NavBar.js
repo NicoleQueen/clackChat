@@ -31,14 +31,20 @@ class Navbar extends Component {
               placeholder="Search in Slack Chat"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <a class="nav-link" href="#" type="submit">
+              Find a channel
+            </a>
+            {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
-            </button>
+            </button> */}
           </form>
           <div onClick={() => this.props.handleLogout()}>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="click">
+            <a class="nav-link" href="#" type="click">
               Logout
-            </button>
+            </a>
+            {/* <button class="btn btn-outline-success my-2 my-sm-0" type="click">
+              Logout
+            </button> */}
           </div>
         </nav>
       </div>

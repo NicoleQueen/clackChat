@@ -47,12 +47,12 @@ class Login extends React.Component {
                 />
               </label>
               <p class="forgot-pass">Forgot password?</p>
-              <button type="submit" class="submit">
+              <button type="submit" class="submit" id="b1">
                 Sign In
               </button>
             </form>
             <a href="https://facebook.com/" target="_blank">
-              <button type="button" class="fb-btn">
+              <button type="button" class="fb-btn" id="b2">
                 Connect with <span>facebook</span>
               </button>
             </a>

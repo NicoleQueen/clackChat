@@ -9,7 +9,7 @@ function PostForm(props) {
   // console.log(currentChannelName);
 
   return (
-    <form onSubmit={(e) => props.addPost(e)}>
+    <form id="form" onSubmit={(e) => props.addPost(e)}>
       <input
         name="post"
         type="text"
