@@ -5,6 +5,8 @@ import SlackPage from "../containers/SlackPage.js";
 
 class Home extends Component {
   render() {
+    console.log(this.props)
+
     return (
       <Router>
         <div className="Home">
