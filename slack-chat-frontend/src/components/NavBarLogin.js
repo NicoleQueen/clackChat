@@ -25,7 +25,7 @@ class NavbarLogin extends Component {
             />
             Slack Chat
           </a>
-          <a class="nav-link" href="#about">
+          <a class="nav-link" href="#about" id={"about"}>
             About
           </a>
         </nav>

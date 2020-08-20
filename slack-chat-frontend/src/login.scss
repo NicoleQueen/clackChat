@@ -12,6 +12,36 @@ body {
 }
 
 input,
+// #b1 {
+//   border: none;
+//   outline: none;
+//   background: none;
+//   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+// }
+
+// input,
+// #b2 {
+//   border: none;
+//   outline: none;
+//   background: none;
+//   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+// }
+
+// input,
+// #b3 {
+//   border: none;
+//   outline: none;
+//   background: none;
+//   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+// }
+
+// input,
+// #b4 {
+//   border: none;
+//   outline: none;
+//   background: none;
+//   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+// }
 button {
   border: none;
   outline: none;
@@ -76,6 +106,50 @@ $diffRatio: ($contW - $imgW) / $contW;
   }
 }
 
+// #b1 {
+//   display: block;
+//   margin: 0 auto;
+//   width: $inputW;
+//   height: $btnH;
+//   border-radius: 30px;
+//   color: #fff;
+//   font-size: 15px;
+//   cursor: pointer;
+// }
+
+// #b2 {
+//   display: block;
+//   margin: 0 auto;
+//   width: $inputW;
+//   height: $btnH;
+//   border-radius: 30px;
+//   color: #fff;
+//   font-size: 15px;
+//   cursor: pointer;
+// }
+
+// #b3 {
+//   display: block;
+//   margin: 0 auto;
+//   width: $inputW;
+//   height: $btnH;
+//   border-radius: 30px;
+//   color: #fff;
+//   font-size: 15px;
+//   cursor: pointer;
+// }
+
+// #b4 {
+//   display: block;
+//   margin: 0 auto;
+//   width: $inputW;
+//   height: $btnH;
+//   border-radius: 30px;
+//   color: #fff;
+//   font-size: 15px;
+//   cursor: pointer;
+// }
+
 button {
   display: block;
   margin: 0 auto;
@@ -100,6 +174,7 @@ button {
   &:before {
     content: "";
     position: absolute;
+    margin-top: -4px;
     right: 0;
     top: 0;
     width: $contW;
@@ -112,6 +187,7 @@ button {
   &:after {
     content: "";
     position: absolute;
+    margin-top: -4px;
     left: 0;
     top: 0;
     width: 100%;

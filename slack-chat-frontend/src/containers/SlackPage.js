@@ -42,7 +42,11 @@ const SlackPage = ({ match, channels, posts, user, addPost}) => (
                 posts={posts}
               />
               <footer id="post_form">
+<<<<<<< HEAD
                 <PostForm {...routerProps} channels={channels} user={user} addPost={addPost}/>
+=======
+                <PostForm {...routerProps} channels={channels} />
+>>>>>>> 87e75831c04e606788b3dc0bc62a0dbf69cee448
               </footer>
             </div>
           )}

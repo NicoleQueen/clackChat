@@ -60,7 +60,7 @@ class SignUp extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <button type="button" class="submit">
+          <button type="button" class="submit" id="b3">
             Sign Up
           </button>
         </form>

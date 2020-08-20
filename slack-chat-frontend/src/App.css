@@ -38,7 +38,7 @@
 }
 
 .NavBar {
-  background-color: rgb(160, 13, 160);
+  background-color: rgb(112, 4, 112);
 }
 
 .content {
@@ -51,7 +51,7 @@
 }
 
 .logout {
-  color: #0077cc;
+  color: rgb(248, 241, 241);
   font-family: "Times New Roman", Times, serif;
   border: 1px solid #000000;
   background: #000000;
@@ -66,7 +66,7 @@
 }
 
 .navbar-brand {
-  color: #000;
+  color: rgb(248, 241, 241);
   font-family: "Great Vibes", cursive;
   padding: 10px;
   font-size: 30px;
@@ -85,6 +85,52 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: stretch;
-  flex-wrap: wrap;
+  margin-top: 0px;
+}
+
+#paper2 {
   height: 100vh;
+}
+
+#paper1 {
+  height: 100vh;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStEZUOwlf-huiHX4kqacshguV6XUPgq5YjxA&usqp=CAU");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#post_form {
+  /* display: flex;
+  align-self: flex-end;
+  margin-bottom: 9px; */
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+}
+
+#form {
+  display: flex;
+  /* justify-content: space-around;
+  align-self: flex-end; */
+}
+
+.nav-link {
+  color: rgb(248, 241, 241);
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#timestamp {
+  color: rgb(49, 28, 28);
+  font-family: "Great Vibes", cursive;
+  margin-left: 36px;
+}
+
+.NavBarLogin {
+  background-color: rgb(112, 4, 112);
+}
+
+#about {
+  color: black;
 }
