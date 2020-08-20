@@ -134,3 +134,12 @@
 #about {
   color: black;
 }
+
+.PostContainer{
+  background-color: #fed9ff;
+  width: 100%;
+  height: 70vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+}

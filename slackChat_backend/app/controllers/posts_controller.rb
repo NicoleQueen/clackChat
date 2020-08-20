@@ -7,21 +7,14 @@ class PostsController < ApplicationController
   # before_action :authorized, only: [:create]
 
   def create
-    byebug
-
-    @post = Post.create(content:posts_params[:content], emoji:posts_params[:emoji], timestamp:"", user_id:@user.id, channel_id: "")
-      # if User.find_by(username:posts_params[:user])
-      #     @post = Post.create(content:posts_params[:content], emoji:posts_params[:emoji], timestamp:"", user_id:@user.id, channel_id: "")
-      # else 
-      #     User.create(username:posts_params[:user])
-      #     @post = Post.create(content:posts_params[:content], emoji:posts_params[:emoji], timestamp:"", user_id:@user.id, channel_id: "")
-      # end 
-      # render json: @post
+    user = User.find_by(id:params[:user_id])
+    @post = Post.create(content:posts_params[:content], timestamp:posts_params[:timestamp], user_id:user.id, channel_id:posts_params[:channel_id])
+    render json: @post
   end 
 
   private 
 
   def posts_params
-      params.permit(:id, :content, :emoji, :timestamp, user_id:, channel_id:)
+      params.permit(:content, :timestamp, :user_id, :channel_id)
   end
 end

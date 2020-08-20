@@ -18,7 +18,7 @@ class PostsContainer extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="PostContainer" >
         <aside>
           {this.props.channels.length > 0 && this.currentChannelPosts()}
         </aside>

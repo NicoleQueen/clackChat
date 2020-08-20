@@ -178,7 +178,12 @@ class App extends Component {
           body:JSON.stringify(post)
         })
         .then(res => res.json())
-        this.props.history.push('/channels/${post.channel_id}');
+        .then(json => {
+          // this.fetchPosts()
+          this.setState({
+            posts: [...this.state.posts, json] })
+          // this.props.history.push('/channels/${post.channel_id}');   
+      })     
   }
 
   render() {
