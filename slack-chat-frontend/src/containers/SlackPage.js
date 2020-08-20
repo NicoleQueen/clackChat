@@ -6,6 +6,7 @@ import PostForm from "../components/PostForm";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SlackPage = ({ match, channels, posts }) => (
+const SlackPage = ({ match, channels, posts, user, addPost}) => (
   <div className="page">
     <Grid item xs={2} className="grid1">
       <Paper className={useStyles().paper} id="paper1">
@@ -41,7 +42,7 @@ const SlackPage = ({ match, channels, posts }) => (
                 posts={posts}
               />
               <footer id="post_form">
-                <PostForm {...routerProps} channels={channels} />
+                <PostForm {...routerProps} channels={channels} user={user} addPost={addPost}/>
               </footer>
             </div>
           )}

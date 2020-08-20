@@ -64,8 +64,8 @@ class SignUp extends React.Component {
             Sign Up
           </button>
         </form>
-        <a href="http://localhost:3002/login">
-          <button type="button" class="fb-btn" id="b4">
+        <a href="http://localhost:3000/login">
+          <button type="button" class="fb-btn">
             Join with <span>Slack Chat</span>
           </button>
         </a>

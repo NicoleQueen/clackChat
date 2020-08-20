@@ -3,15 +3,16 @@ import Post from "../components/Post";
 
 class PostsContainer extends Component {
   currentChannelPosts = (props) => {
+    // console.log(this.props.posts)
     let currentChannel = this.props.channels.filter((channel) => {
       return channel.id === parseInt(this.props.match.params.channelId);
     });
 
     return currentChannel[0].posts.map((post) => {
       return (
-        <li>
+        <ul>
           <Post post={post} posts={this.props.posts} />
-        </li>
+        </ul>
       );
     });
   };

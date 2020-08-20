@@ -5,17 +5,21 @@ import SlackPage from "../containers/SlackPage.js";
 
 class Home extends Component {
   render() {
+    console.log(this.props)
+
     return (
       <Router>
         <div className="Home">
           <Route
             path="/channels"
             render={(routerProps) => (
+              
               <SlackPage
                 {...routerProps}
                 channels={this.props.channels}
                 posts={this.props.posts}
                 user={this.props.user}
+                addPost={this.props.addPost}
               />
             )}
           />
