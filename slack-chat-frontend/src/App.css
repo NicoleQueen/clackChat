@@ -38,7 +38,7 @@
 }
 
 .NavBar {
-  background-color: rgb(160, 13, 160);
+  background-color: rgb(112, 4, 112);
 }
 
 .content {
@@ -85,6 +85,7 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: stretch;
+  padding-top: 0px;
 }
 
 #paper2 {
@@ -93,6 +94,10 @@
 
 #paper1 {
   height: 100vh;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStEZUOwlf-huiHX4kqacshguV6XUPgq5YjxA&usqp=CAU");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #post_form {
