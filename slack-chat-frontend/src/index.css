@@ -11,25 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.Post:hover{
-  background:rgb(222, 222, 222);
-}
-
-.postMenu {
-  float: right;
-}
-
-.postContent {
-  text-align: left;
-  padding: 12px;
-}
-
-.postInfo {
-  float: left;
-  padding: 12px;
-}
-
-.postWrapper{
-  display:flex;
-}

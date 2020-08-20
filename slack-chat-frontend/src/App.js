@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp";
 import Home from "./components/Home";
 import { Redirect } from "react-router-dom";
 import { Route, Switch, NavLink, withRouter } from "react-router-dom";
+import PostForm from "./components/PostForm";
 
 class App extends Component {
   state = {
@@ -30,7 +31,7 @@ class App extends Component {
     this.fetchPosts();
 
     if (localStorage.token) {
-      fetch("http://localhost:4000/persist", {
+      fetch("http://localhost:3000/persist", {
         headers: {
           Authorization: `Bearer ${localStorage.token}`,
         },
@@ -40,7 +41,7 @@ class App extends Component {
           console.log(json);
           this.handleAuthResponse(json);
         });
-      // .then(json => window.location.replace('http://localhost:4000/channels'))
+      // .then(json => window.location.replace('http://localhost:3000/channels'))
     }
   }
 
@@ -58,7 +59,7 @@ class App extends Component {
         },
         () => {
           this.props.history.push("/channels");
-          // window.location.replace('http://localhost:4000/channels')
+          // window.location.replace('http://localhost:3000/channels')
           console.log(this.state.user);
         }
       );
@@ -151,12 +152,37 @@ class App extends Component {
       users={this.state.users}
       channels={this.state.channels}
       posts={this.state.posts}
+      addPost={this.addPost}
     />
   );
   test = () => <SignUp handleLoginOrSignup={this.handleSignup} />;
 
+  // addPostToState = (post) =>{
+  //   let newPost = {content:post.content, timestamp:'2020-8-17 20: 20', user_id: this.state.user.id, channel_id: 2}
+  //   this.setState({posts:[...this.state.posts, newPost]})
+  //   this.props.history.push('/channels')
+  //   console.log(this.props.history)
+  // }
+
+  // renderPostForm = () => <PostForm addPostToState={this.addPostToState} token={this.state.user.token}/>
+
+  addPost = (e, post) => {
+    e.preventDefault()
+
+    fetch('http://localhost:4000/posts',{
+          method:"POST",
+          headers:{
+            'Content-Type':'application/json',
+            'Authorization': `Bearer ${this.props.token}`
+          },
+          body:JSON.stringify(post)
+        })
+        .then(res => res.json())
+        this.props.history.push('/channels/${post.channel_id}');
+  }
+
   render() {
-    console.log(this.state.user.id);
+    // console.log(this.state.user.id);
     return (
       <div className="App">
         {this.state.user.id ? (
@@ -178,6 +204,7 @@ class App extends Component {
           <Route exact path="/login" render={this.renderLoginPage} />
           <Route path="/channels" render={this.renderHomePage} />
           <Route path="/signup" render={this.renderSignUpPage} />
+          {/* <Route path='/post_form' component={this.renderPostForm}/> */}
         </Switch>
       </div>
     );

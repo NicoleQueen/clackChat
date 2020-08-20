@@ -8,15 +8,16 @@ class Home extends Component {
     return (
       <Router>
         <div className="Home">
-          {/* <NavBar users={this.props.users} user={this.props.user} /> */}
           <Route
             path="/channels"
             render={(routerProps) => (
+              
               <SlackPage
                 {...routerProps}
                 channels={this.props.channels}
                 posts={this.props.posts}
                 user={this.props.user}
+                addPost={this.props.addPost}
               />
             )}
           />
