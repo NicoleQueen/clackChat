@@ -28,11 +28,11 @@ class Navbar extends Component {
             <input
               class="form-control mr-sm-2"
               type="search"
-              placeholder="Search in Slack Chat"
+              placeholder="Find a channel..."
               aria-label="Search"
             />
             <a class="nav-link" href="#" type="submit">
-              Find a channel
+              Search
             </a>
             {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
