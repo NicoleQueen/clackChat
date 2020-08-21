@@ -153,18 +153,10 @@ class App extends Component {
       channels={this.state.channels}
       posts={this.state.posts}
       addPost={this.addPost}
+      deletePost={this.deletePost}
     />
   );
   test = () => <SignUp handleLoginOrSignup={this.handleSignup} />;
-
-  // addPostToState = (post) =>{
-  //   let newPost = {content:post.content, timestamp:'2020-8-17 20: 20', user_id: this.state.user.id, channel_id: 2}
-  //   this.setState({posts:[...this.state.posts, newPost]})
-  //   this.props.history.push('/channels')
-  //   console.log(this.props.history)
-  // }
-
-  // renderPostForm = () => <PostForm addPostToState={this.addPostToState} token={this.state.user.token}/>
 
   addPost = (e, post) => {
     e.preventDefault()
@@ -178,8 +170,44 @@ class App extends Component {
           body:JSON.stringify(post)
         })
         .then(res => res.json())
-        this.props.history.push('/channels/${post.channel_id}');
+        .then(json => {
+          // this.fetchPosts()
+          this.setState({
+            posts: [...this.state.posts, json] })
+          // this.props.history.push('/channels/${post.channel_id}');   
+      })     
   }
+
+  // deletePost = (post) => {      
+  //   const asdf = {             
+  //     method: 'DELETE',
+  //     headers:{
+  //       'accept': 'application/json',
+  //       'content-type': 'application/json'
+  //     }
+  //   }
+
+  deletePost = (post) => {
+    fetch(`http://localhost:4000/posts/${post.id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then(() => this.fetchPosts())
+  };
+
+
+  //   fetch('http://localhost:4000/posts/' + channel.id, asdf)
+  //   .then(res => res.json())
+  //   .then(json => this.removePost(bot))
+  //   .catch(error => alert(error))
+  // }
+
+  // removePost = (post) => {
+  //   let newBotArmy = this.state.botArmy.filter(item => item !== bot)
+  //   let newBotCollection = this.state.bots.filter(item => item !== bot)
+  //   this.setState({botArmy:newBotArmy, bots:newBotCollection})
+  // }
+
 
   render() {
     // console.log(this.state.user.id);

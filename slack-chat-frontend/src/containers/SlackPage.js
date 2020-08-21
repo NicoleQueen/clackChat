@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SlackPage = ({ match, channels, posts, user, addPost}) => (
+const SlackPage = ({ match, channels, posts, user, addPost, deletePost}) => (
   <div className="page">
     <Grid item xs={2} className="grid1">
       <Paper className={useStyles().paper} id="paper1">
@@ -40,6 +40,7 @@ const SlackPage = ({ match, channels, posts, user, addPost}) => (
                 {...routerProps}
                 channels={channels}
                 posts={posts}
+                deletePost={deletePost}
               />
               <footer id="post_form">
                 <PostForm {...routerProps} channels={channels} user={user} addPost={addPost}/>
