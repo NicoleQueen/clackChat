@@ -3,7 +3,7 @@ import "../App.css";
 
 class Navbar extends Component {
   renderUser = () => {
-    console.log(this.props.searchChannel);
+    // console.log(this.props.searchChannel);
     let currentUser = this.props.users.filter(
       (item) => item.id === this.props.user.id
     );
@@ -35,9 +35,11 @@ class Navbar extends Component {
               placeholder="Find a channel..."
               aria-label="Search"
             />
-            <a class="nav-link" href="#search" type="submit">
-              Search
-            </a>
+            <button type="submit">
+              <a class="nav-link" href="#search">
+                Search
+              </a>
+            </button>
           </form>
           <div onClick={() => this.props.handleLogout()}>
             <a class="nav-link" href="#" type="click">

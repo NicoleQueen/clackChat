@@ -18,27 +18,50 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SlackPage = ({ match, channels, posts }) => (
+const SlackPage = ({
+  match,
+  channels,
+  posts,
+  user,
+  addPost,
+  deletePost,
+  users,
+  search,
+  renderSearchPage,
+}) => (
   <div className="page">
     <Grid item xs={2} className="grid1">
       <Paper className={useStyles().paper} id="paper1">
-        <ChannelsList channels={channels} />
+        <ChannelsList channels={channels} user={user} users={users} />
       </Paper>
     </Grid>
     <Grid item xs={10} className="grid1">
       <Paper className={useStyles().paper} id="paper2">
         <Route exact path={match.url} render={() => <Welcome />} />
+        <Route path="/channels/#search" render={renderSearchPage} />
         <Route
           path={`${match.url}/:channelId`}
           render={(routerProps) => (
             <div>
+              {/* {search ? (
+                console.log(1)
+              ) : ( */}
+              {/* // renderSearchPage() */}
               <PostsContainer
+                componentDidMount={console.log(search)}
                 {...routerProps}
                 channels={channels}
                 posts={posts}
+                deletePost={deletePost}
               />
+              {/* )} */}
               <footer id="post_form">
-                <PostForm {...routerProps} channels={channels} />
+                <PostForm
+                  {...routerProps}
+                  channels={channels}
+                  user={user}
+                  addPost={addPost}
+                />
               </footer>
             </div>
           )}
