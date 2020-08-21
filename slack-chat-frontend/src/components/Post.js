@@ -22,6 +22,9 @@ class Post extends Component {
     let currentPost = this.props.posts.filter(
       (item) => item.id === this.props.post.id
     );
+
+    console.log(this.props.post)
+
     return (
       <div className="SinglePostContainer" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
         <a class="PostInfo">
@@ -48,7 +51,6 @@ class Post extends Component {
             <button type="button" class="btn btn-secondary-sm" onClick={()=> this.props.deletePost(this.props.post)}>Delete</button>
           </div>
         : null}
-      
       </div>
     );
   };

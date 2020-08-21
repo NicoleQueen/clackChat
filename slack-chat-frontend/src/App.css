@@ -152,3 +152,7 @@
 .SinglePostContainer:hover {
   background-color: rgb(214, 214, 214);
 }
+
+.btn-grp {
+  float: right;
+}
