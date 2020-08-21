@@ -3,13 +3,13 @@ import "./App.css";
 import NavBar from "./components/NavBar.js";
 import NavBarLogin from "./components/NavBarLogin.js";
 
-// import SlackPage from "./containers/SlackPage.js";
-
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
 import { Redirect } from "react-router-dom";
 import { Route, Switch, NavLink, withRouter } from "react-router-dom";
+import SearchContainer from "./containers/SearchContainer";
+import SearchNoInfo from "./components/SearchNoInfo";
 
 class App extends Component {
   state = {
@@ -109,6 +109,7 @@ class App extends Component {
 
   handleSignup = (e, userInfo) => {
     e.preventDefault();
+    console.log(e, userInfo);
     fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
@@ -155,8 +156,41 @@ class App extends Component {
   );
   test = () => <SignUp handleLoginOrSignup={this.handleSignup} />;
 
+  searchChannel = (e) => {
+    e.preventDefault(e.target);
+    console.log();
+    let channelsName = this.state.channels.map((channel) => channel.name);
+    let searchedChannel = this.state.channels.filter(
+      (channel) => channel.name === e.target.value
+    );
+    return channelsName.includes(e.target.value) ? (
+      <SearchContainer
+        searchedChannel={searchedChannel}
+        handleJoinChannel={this.handleJoinChannel}
+      />
+    ) : (
+      <SearchNoInfo channelName={e.target.value} />
+    );
+  };
+
+  handleJoinChannel = (channel) => {
+    let data = { channels: { id: channel.id, name: channel.name } };
+    fetch(`http://localhost:3000/users/${this.state.user.id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        this.props.history.push("/channels");
+      });
+  };
+
   render() {
-    console.log(this.state.user.id);
+    // console.log(this.state.user.id);
     return (
       <div className="App">
         {this.state.user.id ? (
@@ -165,6 +199,7 @@ class App extends Component {
               users={this.state.users}
               user={this.state.user}
               handleLogout={this.handleLogout}
+              searchChannel={this.searchChannel}
             />
           </div>
         ) : (

@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: rgb(248, 241, 241);
 }
 
 @keyframes App-logo-spin {
@@ -98,6 +98,9 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: rgb(248, 241, 241);
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 #post_form {
@@ -133,4 +136,32 @@
 
 #about {
   color: black;
+}
+
+h3 {
+  color: black;
+  padding: 30px;
+  font-family: verdana;
+  font-size: 200%;
+  text-align: center;
+}
+
+#welcome {
+  color: black;
+  padding: 50px;
+  line-height: 52px;
+  margin: 15px;
+  font-family: courier;
+  font-size: 120%;
+}
+
+#pp {
+  padding: 50px;
+  line-height: 52px;
+}
+
+#channels {
+  color: rgb(248, 241, 241);
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
 }
