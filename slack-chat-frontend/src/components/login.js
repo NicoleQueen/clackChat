@@ -10,7 +10,7 @@ class Login extends React.Component {
 
   handleChange = (e) => {
     let { name, value } = e.target;
-    console.log({ name, value });
+    // console.log({ name, value });
     this.setState({
       [name]: value,
     });
@@ -64,18 +64,10 @@ class Login extends React.Component {
                   <h2>New here?</h2>
                   <p>Creat a new account and discover great people!</p>
                 </div>
-                {/* <div class="img__text m--in">
-                <h2>One of us?</h2>
-                <p>
-                  If you already has an account, just sign in. We've missed you!
-                </p>
-              </div> */}
 
                 <div>
-                  {/* {onClick ? console.log("signup1") : console.log("signup2")} */}
                   <div class="img__btn">
                     <span class="m--up">Sign Up</span>
-                    {/* <span class="m--in">Sign In</span> */}
                   </div>
                 </div>
               </div>

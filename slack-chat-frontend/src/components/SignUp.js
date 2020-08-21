@@ -11,12 +11,13 @@ class SignUp extends React.Component {
 
   handleChange = (e) => {
     let { name, value } = e.target;
-    console.log(e.target);
-    console.log(e.target.value);
+
+    // console.log(e.target);
+    // console.log(e.target.value);
     this.setState({
       [name]: value,
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
@@ -60,11 +61,11 @@ class SignUp extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <button type="button" class="submit" id="b3">
+          <button type="submit" className="submit" id="b3">
             Sign Up
           </button>
         </form>
-        <a href="http://localhost:3000/login">
+        <a href="http://localhost:3001/login">
           <button type="button" class="fb-btn">
             Join with <span>Slack Chat</span>
           </button>

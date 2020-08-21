@@ -1,32 +1,42 @@
 import React, { Component } from "react";
 
 class Post extends Component {
-
   state = {
-    isMouseInside: false
+    isMouseInside: false,
+    clickedNumber: 0,
+  };
+
+  increaseLike() {
+    return this.setState({
+      clickedNumber: this.state.clickedNumber + 1,
+    });
   }
 
   getInitialState() {
     return {
-      isMouseInside: false
+      isMouseInside: false,
     };
   }
   mouseEnter = () => {
     this.setState({ isMouseInside: true });
-  }
+  };
   mouseLeave = () => {
     this.setState({ isMouseInside: false });
-  }
+  };
 
   currentPostInfo = () => {
     let currentPost = this.props.posts.filter(
       (item) => item.id === this.props.post.id
     );
 
-    console.log(this.props.post)
+    // console.log(this.props.post)
 
     return (
-      <div className="SinglePostContainer" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+      <div
+        className="SinglePostContainer"
+        onMouseEnter={this.mouseEnter}
+        onMouseLeave={this.mouseLeave}
+      >
         <a class="PostInfo">
           <img
             src={currentPost.length > 0 && currentPost[0].user.img_url}
@@ -43,14 +53,33 @@ class Post extends Component {
           </div>
         </a>
 
-        <p>{currentPost.length > 0 && currentPost[0].content}</p>
-        
-        {this.state.isMouseInside ? 
-          <div class="btn-group" role="group" aria-label="Basic example" >
-            <button type="button" class="btn btn-secondary-sm">Like</button>
-            <button type="button" class="btn btn-secondary-sm" onClick={()=> this.props.deletePost(this.props.post)}>Delete</button>
+        <p id="post">
+          {currentPost.length > 0 && currentPost[0].content}
+          {"    "}
+          <div id="like">
+            Like:
+            {this.state.clickedNumber}
           </div>
-        : null}
+        </p>
+
+        {this.state.isMouseInside ? (
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button
+              type="button"
+              class="btn btn-secondary-sm"
+              onClick={() => this.increaseLike()}
+            >
+              Like
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary-sm"
+              onClick={() => this.props.deletePost(this.props.post)}
+            >
+              Delete
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   };
@@ -76,7 +105,7 @@ export default Post;
 // render() {
 //   return (
 //     <div onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-      
+
 //     </div>
 //   );
 // }
