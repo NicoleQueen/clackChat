@@ -12,6 +12,7 @@ import { Redirect } from "react-router-dom";
 import { Route, Switch, NavLink, withRouter } from "react-router-dom";
 import PostForm from "./components/PostForm";
 
+
 class App extends Component {
   state = {
     user: {
@@ -22,6 +23,7 @@ class App extends Component {
     channels: [],
     users: [],
     posts: [],
+    showModal : false,
   };
 
   componentDidMount() {
@@ -158,6 +160,7 @@ class App extends Component {
       posts={this.state.posts}
       addPost={this.addPost}
       deletePost={this.deletePost}
+      addPost={this.addPost}
     />
   );
 
@@ -183,8 +186,6 @@ class App extends Component {
       })     
   }
 
-
-
   deletePost = (post) => {
     fetch(`http://localhost:4000/posts/${post.id}`, {
       method: "DELETE",
@@ -192,9 +193,6 @@ class App extends Component {
       .then((res) => res.json())
       .then(() => this.fetchPosts())
   };
-
-
-
 
   render() {
     // console.log(this.state.user.id);

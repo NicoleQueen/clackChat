@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import EditPost from './EditPost'
 
 class Post extends Component {
 
   state = {
-    isMouseInside: false
+    isMouseInside: false,
+    showModal : false
   }
 
   getInitialState() {
@@ -18,12 +20,24 @@ class Post extends Component {
     this.setState({ isMouseInside: false });
   }
 
+  state = {
+    showModal : false
+  }
+
+  showModalHandler = (event) =>{
+    this.setState({showModal:true});
+  }
+
+  hideModalHandler = (event) =>{
+    this.setState({showModal:false});
+  }
+
   currentPostInfo = () => {
     let currentPost = this.props.posts.filter(
       (item) => item.id === this.props.post.id
-    );
-
-    console.log(this.props.post)
+    ); 
+  
+    // console.log(this.props.post)
 
     return (
       <div className="SinglePostContainer" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
@@ -47,10 +61,12 @@ class Post extends Component {
         
         {this.state.isMouseInside ? 
           <div class="btn-group" role="group" aria-label="Basic example" >
-            <button type="button" class="btn btn-secondary-sm">Like</button>
+            <button type="button" onClick={this.showModalHandler}>Click Me!</button>
+            {this.state.showForm ? this.showForm() : null}
             <button type="button" class="btn btn-secondary-sm" onClick={()=> this.props.deletePost(this.props.post)}>Delete</button>
           </div>
         : null}
+        <EditPost showModal={this.showModal} hideModalHandler={this.hideModalHandler}></EditPost>
       </div>
     );
   };
@@ -61,22 +77,3 @@ class Post extends Component {
 }
 
 export default Post;
-
-// getInitialState() {
-//   return {
-//     isMouseInside: false
-//   };
-// }
-// mouseEnter = () => {
-//   this.setState({ isMouseInside: true });
-// }
-// mouseLeave = () => {
-//   this.setState({ isMouseInside: false });
-// }
-// render() {
-//   return (
-//     <div onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-      
-//     </div>
-//   );
-// }

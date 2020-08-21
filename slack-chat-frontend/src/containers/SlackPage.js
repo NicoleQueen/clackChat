@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SlackPage = ({ match, channels, posts, user, addPost, deletePost}) => (
+const SlackPage = ({ match, channels, posts, user, addPost, deletePost, editPost}) => (
   <div className="page">
     <Grid item xs={2} className="grid1">
       <Paper className={useStyles().paper} id="paper1">
