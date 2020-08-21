@@ -10,7 +10,14 @@ class PostsController < ApplicationController
     user = User.find_by(id:params[:user_id])
     @post = Post.create(content:posts_params[:content], timestamp:posts_params[:timestamp], user_id:user.id, channel_id:posts_params[:channel_id])
     render json: @post
-  end 
+  end
+
+  def destroy
+ 
+    @post = Post.find(params[:id])
+    @post.destroy
+    render json: @post
+  end
 
   private 
 

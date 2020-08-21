@@ -20,6 +20,7 @@ class Home extends Component {
                 posts={this.props.posts}
                 user={this.props.user}
                 addPost={this.props.addPost}
+                deletePost={this.props.deletePost}
               />
             )}
           />
