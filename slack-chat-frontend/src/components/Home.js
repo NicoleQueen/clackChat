@@ -5,7 +5,7 @@ import SlackPage from "../containers/SlackPage.js";
 
 class Home extends Component {
   render() {
-    console.log(this.props)
+    // console.log(this.props)
 
     return (
       <Router>
@@ -13,7 +13,6 @@ class Home extends Component {
           <Route
             path="/channels"
             render={(routerProps) => (
-              
               <SlackPage
                 {...routerProps}
                 channels={this.props.channels}
@@ -21,7 +20,9 @@ class Home extends Component {
                 user={this.props.user}
                 addPost={this.props.addPost}
                 deletePost={this.props.deletePost}
-                editPost={this.props.editPost}
+                search={this.props.search}
+                users={this.props.users}
+                renderSearchPage={this.props.renderSearchPage}
               />
             )}
           />
