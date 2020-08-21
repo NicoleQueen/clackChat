@@ -31,7 +31,7 @@ class App extends Component {
     this.fetchPosts();
 
     if (localStorage.token) {
-      fetch("http://localhost:3000/persist", {
+      fetch("http://localhost:4000/persist", {
         headers: {
           Authorization: `Bearer ${localStorage.token}`,
         },
@@ -83,7 +83,10 @@ class App extends Component {
   fetchPosts = () => {
     fetch(`http://localhost:4000/posts`)
       .then((res) => res.json())
-      .then((data) => this.setState({ posts: data }));
+      .then((data) => {
+        console.log(this.state)
+        this.setState({ posts: data })
+      });
   };
 
   handleLogin = (e, userInfo) => {
@@ -146,6 +149,7 @@ class App extends Component {
     />
   );
   renderSignUpPage = () => <SignUp handleLoginOrSignup={this.handleSignup} />;
+
   renderHomePage = () => (
     <Home
       user={this.state.user}
@@ -156,6 +160,7 @@ class App extends Component {
       deletePost={this.deletePost}
     />
   );
+
   test = () => <SignUp handleLoginOrSignup={this.handleSignup} />;
 
   addPost = (e, post) => {
@@ -178,14 +183,7 @@ class App extends Component {
       })     
   }
 
-  // deletePost = (post) => {      
-  //   const asdf = {             
-  //     method: 'DELETE',
-  //     headers:{
-  //       'accept': 'application/json',
-  //       'content-type': 'application/json'
-  //     }
-  //   }
+
 
   deletePost = (post) => {
     fetch(`http://localhost:4000/posts/${post.id}`, {
@@ -196,17 +194,6 @@ class App extends Component {
   };
 
 
-  //   fetch('http://localhost:4000/posts/' + channel.id, asdf)
-  //   .then(res => res.json())
-  //   .then(json => this.removePost(bot))
-  //   .catch(error => alert(error))
-  // }
-
-  // removePost = (post) => {
-  //   let newBotArmy = this.state.botArmy.filter(item => item !== bot)
-  //   let newBotCollection = this.state.bots.filter(item => item !== bot)
-  //   this.setState({botArmy:newBotArmy, bots:newBotCollection})
-  // }
 
 
   render() {

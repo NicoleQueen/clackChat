@@ -8,7 +8,7 @@ class PostsContainer extends Component {
   }
 
   currentChannelPosts = (props) => {
-    // console.log(this.props.posts)
+    console.log(this.props.posts)
     let currentChannel = this.props.channels.filter((channel) => {
       return channel.id === parseInt(this.props.match.params.channelId);
     });
