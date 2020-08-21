@@ -48,7 +48,7 @@ const SlackPage = ({
               ) : ( */}
               {/* // renderSearchPage() */}
               <PostsContainer
-                componentDidMount={console.log(search)}
+                // componentDidMount={console.log(search)}
                 {...routerProps}
                 channels={channels}
                 posts={posts}

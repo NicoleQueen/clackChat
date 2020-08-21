@@ -12,8 +12,13 @@ class PostsController < ApplicationController
     render json: @post
   end
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update(content:posts_params[:content])
+    render json: @post
+  end
+
   def destroy
- 
     @post = Post.find(params[:id])
     @post.destroy
     render json: @post

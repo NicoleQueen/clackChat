@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import EditPost from './EditPost'
 
 class Post extends Component {
   state = {
     isMouseInside: false,
+    showModal : false,
     clickedNumber: 0,
   };
 
@@ -23,6 +25,14 @@ class Post extends Component {
   mouseLeave = () => {
     this.setState({ isMouseInside: false });
   };
+
+  showModalHandler = (event) =>{
+    this.setState({showModal:true});
+  }
+
+  hideModalHandler = (event) =>{
+    this.setState({showModal:false});
+  }
 
   currentPostInfo = () => {
     let currentPost = this.props.posts.filter(
