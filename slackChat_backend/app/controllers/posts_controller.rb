@@ -13,10 +13,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
- 
     @post = Post.find(params[:id])
     @post.destroy
-    render json: @post
+    @posts = Post.all
+    render json: @posts
   end
 
   private 

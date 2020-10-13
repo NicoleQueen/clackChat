@@ -12,7 +12,7 @@ class ChannelsList extends Component {
       currentUser.length > 0 &&
       currentUser[0].channels.map((channel) => (
         <Link key={channel.id} to={`/channels/${channel.id}`}>
-          <li id="channel">{channel.name}</li>
+          <ul id="channel">{channel.name}</ul>
         </Link>
       ))
     );

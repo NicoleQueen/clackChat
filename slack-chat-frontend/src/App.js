@@ -258,16 +258,19 @@ class App extends Component {
     })
       .then((res) => res.json())
       .then((json) => {
-        // this.fetchPosts()
-        // this.setState({
-        //   posts: [...this.state.posts, json],
-        // });
-        window.location.reload(`http://localhost:3001/channels`);
-        this.props.history.push(`/channels/${post.channel_id}`);
+        this.setState({
+          posts: [...this.state.posts, json],
+        });
+        // () => {
+        this.fetchChannels();
+        // };
+        // window.location.reload(`http://localhost:3001/channels`);
+        // this.props.history.push(`/channels/${post.channel_id}`);
         // <div>
         //   <Redirect to={`/channels/${post.channel_id}`} />
         // </div>;
-      });
+      })
+      .then(e.target.reset());
   };
 
   deletePost = (post) => {
@@ -275,9 +278,17 @@ class App extends Component {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then(() => {
-        this.fetchPosts();
-        window.location.reload(`http://localhost:3001/channels`);
+      .then((json) => {
+        // this.setState(
+        //   {
+        //     posts: json,
+        //   },
+        this.fetchChannels();
+        // window.location.replace(
+        //   `http://localhost:3001/channels/${post.channel_id}`
+        // )
+        // );
+        // this.fetchPosts();
       });
   };
 
