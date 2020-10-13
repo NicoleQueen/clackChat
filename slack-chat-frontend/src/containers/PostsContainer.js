@@ -7,11 +7,12 @@ class PostsContainer extends Component {
   };
 
   currentChannelPosts = (props) => {
-    // console.log(this.props.posts)
+    console.log(this.props)
     let currentChannel = this.props.channels.filter((channel) => {
+      console.log(channel)
       return channel.id === parseInt(this.props.match.params.channelId);
     });
-
+    
     return currentChannel[0].posts.map((post) => {
       return (
         <ul>

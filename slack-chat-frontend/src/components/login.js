@@ -46,16 +46,16 @@ class Login extends React.Component {
                   onChange={this.handleChange}
                 />
               </label>
-              <p class="forgot-pass">Forgot password?</p>
+              {/* <p class="forgot-pass">Forgot password?</p> */}
               <button type="submit" class="submit" id="b1">
                 Sign In
               </button>
             </form>
-            <a href="https://facebook.com/" target="_blank">
+            {/* <a href="https://facebook.com/" target="_blank">
               <button type="button" class="fb-btn" id="b2">
                 Connect with <span>facebook</span>
               </button>
-            </a>
+            </a> */}
           </div>
           <NavLink to="/signup">
             <div class="sub-cont">
@@ -74,14 +74,6 @@ class Login extends React.Component {
             </div>
           </NavLink>
         </div>
-
-        <a
-          href="https://twitter.com/"
-          target="_blank"
-          class="icon-link icon-link--twitter"
-        >
-          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png" />
-        </a>
       </div>
     );
   }

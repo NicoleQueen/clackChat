@@ -12,6 +12,7 @@ import SearchContainer from "./containers/SearchContainer";
 import SearchNoInfo from "./components/SearchNoInfo";
 import PostForm from "./components/PostForm";
 
+
 class App extends Component {
   state = {
     user: {
@@ -22,6 +23,7 @@ class App extends Component {
     channels: [],
     users: [],
     posts: [],
+    showModal : false,
     search: false,
     channelIncluded: null,
     searchedChannel: null,
@@ -35,7 +37,7 @@ class App extends Component {
     this.fetchPosts();
 
     if (localStorage.token) {
-      fetch("http://localhost:3000/persist", {
+      fetch("http://localhost:4000/persist", {
         headers: {
           Authorization: `Bearer ${localStorage.token}`,
         },
@@ -74,22 +76,23 @@ class App extends Component {
   };
 
   fetchChannels = () => {
-    fetch(`http://localhost:3000/channels`)
+    fetch(`http://localhost:4000/channels`)
       .then((res) => res.json())
       .then((data) => this.setState({ channels: data }));
   };
 
   fetchUsers = () => {
-    fetch(`http://localhost:3000/users`)
+    fetch(`http://localhost:4000/users`)
       .then((res) => res.json())
       .then((data) => this.setState({ users: data }));
   };
 
   fetchPosts = () => {
-    fetch(`http://localhost:3000/posts`)
+    console.log('running fetchPost')
+    fetch(`http://localhost:4000/posts`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(this.state);
+        console.log(data);
         this.setState({ posts: data });
       });
   };
@@ -97,7 +100,7 @@ class App extends Component {
   handleLogin = (e, userInfo) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/login", {
+    fetch("http://localhost:4000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,7 +122,7 @@ class App extends Component {
   handleSignup = (e, userInfo) => {
     e.preventDefault();
     // console.log(e, userInfo);
-    fetch("http://localhost:3000/users", {
+    fetch("http://localhost:4000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -207,23 +210,26 @@ class App extends Component {
     // return <SearchContainer searchedChannel={searchedChannel} />;
   };
 
-  renderSearchPage = () => {
-    console.log(this.state);
+  // deletePost = (post) => {
+  //   fetch(`http://localhost:4000/posts/${post.id}`, {
+  //     method: "DELETE",
+  // renderSearchPage = () => {
+  //   console.log(this.state);
 
-    return this.state.channelIncluded ? (
-      <SearchContainer
-        // componentDidMount={console.log("123")}
-        searchedChannel={this.state.searchedChannel}
-        handleJoinChannel={this.handleJoinChannel}
-      />
-    ) : (
-      <SearchNoInfo channelName={this.state.searchedChanneleName} />
-    );
-  };
+  //   return this.state.channelIncluded ? (
+  //     <SearchContainer
+  //       // componentDidMount={console.log("123")}
+  //       searchedChannel={this.state.searchedChannel}
+  //       handleJoinChannel={this.handleJoinChannel}
+  //     />
+  //   ) : (
+  //     <SearchNoInfo channelName={this.state.searchedChanneleName} />
+  //   );
+  // };
 
   handleJoinChannel = (channel) => {
     let data = { channels: { id: channel.id, name: channel.name } };
-    fetch(`http://localhost:3000/users/${this.state.user.id}`, {
+    fetch(`http://localhost:4000/users/${this.state.user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -248,7 +254,7 @@ class App extends Component {
   addPost = (e, post) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/posts", {
+    fetch("http://localhost:4000/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -258,39 +264,42 @@ class App extends Component {
     })
       .then((res) => res.json())
       .then((json) => {
+
+
+        // this.fetchPosts()
         this.setState({
           posts: [...this.state.posts, json],
-        });
-        // () => {
-        this.fetchChannels();
-        // };
-        // window.location.reload(`http://localhost:3001/channels`);
+        },
+        () => {this.fetchChannels()}
+        );
+        // window.location.reload(`http://localhost:3000/channels`);
+
         // this.props.history.push(`/channels/${post.channel_id}`);
         // <div>
         //   <Redirect to={`/channels/${post.channel_id}`} />
         // </div>;
       })
-      .then(e.target.reset());
+
+      .then(e.target.reset()) 
+
   };
 
   deletePost = (post) => {
-    fetch(`http://localhost:3000/posts/${post.id}`, {
+    fetch(`http://localhost:4000/posts/${post.id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((json) => {
-        // this.setState(
-        //   {
-        //     posts: json,
-        //   },
+
+      .then(() => {
         this.fetchChannels();
-        // window.location.replace(
-        //   `http://localhost:3001/channels/${post.channel_id}`
-        // )
-        // );
-        // this.fetchPosts();
+        // window.location.reload(`http://localhost:3000/channels`);
+
       });
   };
+
+  renderPost = ( ) => {
+    console.log('test')
+  }
 
   render() {
     // console.log(this.state.user.id);
@@ -317,7 +326,7 @@ class App extends Component {
           <Route path="/channels" render={this.renderHomePage} />
           <Route path="/signup" render={this.renderSignUpPage} />
           <Route path="/channels#search" render={this.SearchPage} />
-
+          {/* <Route path="/channels/:id" render={this.renderPost}/> */}
           {/* <Route path='/post_form' component={this.renderPostForm}/> */}
         </Switch>
       </div>
