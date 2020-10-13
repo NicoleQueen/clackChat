@@ -264,6 +264,8 @@ class App extends Component {
     })
       .then((res) => res.json())
       .then((json) => {
+
+
         // this.fetchPosts()
         this.setState({
           posts: [...this.state.posts, json],
@@ -271,12 +273,15 @@ class App extends Component {
         () => {this.fetchChannels()}
         );
         // window.location.reload(`http://localhost:3000/channels`);
+
         // this.props.history.push(`/channels/${post.channel_id}`);
         // <div>
         //   <Redirect to={`/channels/${post.channel_id}`} />
         // </div>;
       })
+
       .then(e.target.reset()) 
+
   };
 
   deletePost = (post) => {
@@ -284,9 +289,11 @@ class App extends Component {
       method: "DELETE",
     })
       .then((res) => res.json())
+
       .then(() => {
         this.fetchChannels();
         // window.location.reload(`http://localhost:3000/channels`);
+
       });
   };
 
