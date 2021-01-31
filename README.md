@@ -42,19 +42,20 @@ Within a particular ecosystem, there may be a common way of installing things, s
 
 ## Built with
 
-```bash
-npm start
-```
+<ul>
+  <li>Ruby 2.6.1</li>
+  <li>JavaScript</li>
+  <li>React 16.13.1</li>
+  <li>PostgreSQL</li>
+</ul>
 
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Credits
+## Developer
 
 <div>Qiuyan Peng<div><br>
 <li>https://github.com/NicoleQueen</li><br>
 <li>https://www.linkedin.com/in/qiuyan-peng-12b90b93/</li><br>
 
-<div>Joshua Lorenc<div>
+<div>Joshua Lorenc<div><br>
 <li>https://github.com/Jlorenc1</li><br>
 <li>https://www.linkedin.com/in/joshua-lorenc/</li><br>
 
