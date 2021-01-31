@@ -26,19 +26,15 @@
 
 ## Demo
 
-Write your original intention, philosophy, and goals for the project what you design. A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
 
 ## Installation
 
-Explain some prerequisites that users need to prepare before installation and use, such as：You Need install or upgrade [Node.js](https://nodejs.org/en/) (>= `8.*`, Npm version >= `5.2.0`, [Yarn](https://www.jeffjade.com/2017/12/30/135-npm-vs-yarn-detial-memo/) preferred).
+
 
 ## Features
 
-```bash
-npm i
-```
 
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance.
 
 ## Built with
 
@@ -63,5 +59,5 @@ Within a particular ecosystem, there may be a common way of installing things, s
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2020-present, [Qiuyan Peng](https://www.linkedin.com/in/qiuyan-peng-12b90b93/).[Joshua Lorenc](https://www.linkedin.com/in/joshua-lorenc/).
+Copyright (c) 2020-present, [Qiuyan Peng](https://www.linkedin.com/in/qiuyan-peng-12b90b93/). [Joshua Lorenc](https://www.linkedin.com/in/joshua-lorenc/).
 
