@@ -40,7 +40,7 @@ part 3,
 
 ## Installation
 
-<ul>
+<ol>
   <li>1. Fork and clone this repository. $git clone https://github.com/NicoleQueen/slackChat</li>
   <li>2. Navigate into the slackChat_backend directory. $cd slackChat_backend</li>
   <li>3. Enter the command 'bundle install' in the terminal. $bundle install</li>
@@ -50,7 +50,7 @@ part 3,
   <li>7. Navigate into the slack-chat_frontend directory. $cd slack-chat_frontend</li>
   <li>8. Enter the command "npm install" in the terminal. $npm install</li>
   <li>9. Run "npm start" to view the website. $npm start</li>
-</ul>
+</ol>
 
 ## Features
 <ul>
