@@ -34,6 +34,10 @@ part 2,
 
 [![Demo CountPages alpha](https://j.gifs.com/71oyQw.gif)](https://www.youtube.com/watch?v=hsZ1ya5bK1s&feature=youtu.be)
 
+part 3,
+
+[![Demo CountPages alpha](https://j.gifs.com/zv14Lr.gif)](https://www.youtube.com/watch?v=hsZ1ya5bK1s&feature=youtu.be)
+
 ## Installation
 
 
