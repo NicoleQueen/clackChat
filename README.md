@@ -7,9 +7,9 @@
 
 <h1 align="center">Slack Chat</h1>
 
-<div align="center">
+<div align="center" size="12">
   <strong>
-    Slack Chat is a channel-based messaging platform created using a Ruby on Rails backend and React frontend. With Slack Chat, people can work together more effectively, connect all their software tools and services, and find the information they need to do their best work — all within a secure, enterprise-grade environment.
+    Slack Chat is a channel-based messaging platform created using a Ruby on Rails backend and React frontend. With Slack Chat, people can work together more      effectively, connect all their software tools and services, and find the information they need to do their best work — all within a secure, enterprise-grade environment.
   </strong>
 </div>
 
@@ -50,13 +50,13 @@ Use examples liberally, and show the expected output if you can. It's helpful to
 
 ## Credits
 
-Qiuyan Peng
-https://github.com/NicoleQueen
-https://www.linkedin.com/in/qiuyan-peng-12b90b93/
+<div>Qiuyan Peng<div><br>
+<li>https://github.com/NicoleQueen</li><br>
+<li>https://www.linkedin.com/in/qiuyan-peng-12b90b93/</li><br>
 
-Joshua Lorenc
-https://github.com/Jlorenc1
-https://www.linkedin.com/in/joshua-lorenc/
+<div>Joshua Lorenc<div>
+<li>https://github.com/Jlorenc1</li><br>
+<li>https://www.linkedin.com/in/joshua-lorenc/</li><br>
 
 ## License
 
