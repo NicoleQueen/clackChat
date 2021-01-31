@@ -63,5 +63,5 @@ Within a particular ecosystem, there may be a common way of installing things, s
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2020-present, [SlackChat](your-homepage-url).
+Copyright (c) 2020-present, [Qiuyan Peng](https://www.linkedin.com/in/qiuyan-peng-12b90b93/).[Joshua Lorenc](https://www.linkedin.com/in/joshua-lorenc/).
 
