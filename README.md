@@ -26,7 +26,13 @@
 
 ## Demo
 
+part 1,
+
 [![Demo CountPages alpha](https://j.gifs.com/MwRKyQ.gif)](https://www.youtube.com/watch?v=hsZ1ya5bK1s&feature=youtu.be)
+
+part 2,
+
+[![Demo CountPages alpha](https://j.gifs.com/71oyQw.gif)](https://www.youtube.com/watch?v=hsZ1ya5bK1s&feature=youtu.be)
 
 ## Installation
 
