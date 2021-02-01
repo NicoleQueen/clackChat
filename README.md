@@ -55,11 +55,11 @@ part 3,
 ## Features
 <ul>
   <li>Sign up as a new user or login as a returning user.</li>
-  <li>Into a channel to chat.</li>
+  <li>Join a channel to chat with others.</li>
   <li>Write a post and submit.</li>
-  <li>Like posts which have submited.</li>
-  <li>Delete posts which have submited.</li>
-  <li>Logout.</li>
+  <li>Like posts that have been submitted.</li>
+  <li>Delete posts that have been submitted.</li>
+  <li>User logout.</li>
 </ul>
 
 
